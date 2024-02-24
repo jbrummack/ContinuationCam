@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct RealtimeView: View {
+public struct RealtimeView: View {
     @Binding var image: Image?
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             if let image = image {
                 image

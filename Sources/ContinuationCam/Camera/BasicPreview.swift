@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 ///Example for Preview
-struct VisionViewTemplate: View {
+public struct VisionViewTemplate: View {
     @StateObject private var provider = ContinuationCam(){img in
         print("Received IMG: \(img)")
     }
     @State private var rectImage: Image?
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             RealtimeView(image: $provider.viewfinderImage)
         }.overlay(){

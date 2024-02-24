@@ -17,7 +17,7 @@ import os.log
 import Vision
 
 ///Camera adapted from Apple reference implementation and with replacement of deprecated function calls
-final class Camera: NSObject {
+internal final class Camera: NSObject {
     private let captureSession = AVCaptureSession()
     private var isCaptureSessionConfigured = false
     private var deviceInput: AVCaptureDeviceInput?

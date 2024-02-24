@@ -12,7 +12,7 @@ import Vision
 import os.log
 
 ///Start the CameraVisionProvider via SwiftUI: *Your View*.task {*Your VisionProvider*.camera.start()}
-final class ContinuationCam: ObservableObject {
+public final class ContinuationCam: ObservableObject {
     ///UIImage for simple access
     @Published var viewfinderImage: Image?
     let camera = Camera()
