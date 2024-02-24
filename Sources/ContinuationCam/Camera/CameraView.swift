@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public struct RealtimeView: View {
-    @Binding var image: Image?
+    @Binding public var image: Image?
     
     public var body: some View {
         GeometryReader { geometry in
