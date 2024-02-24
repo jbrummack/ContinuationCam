@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct RealtimeView: View {
+/*public struct RealtimeView: View {
     @Binding public var image: Image?
     public init(image: Image? = nil) {
         //self.image = image
@@ -34,3 +34,4 @@ public struct RealtimeView: View {
         
     }
 }
+*/

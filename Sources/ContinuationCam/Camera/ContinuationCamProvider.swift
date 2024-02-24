@@ -94,7 +94,7 @@ public final class ContinuationCam: ObservableObject {
 }
 
 
-extension CIImage {
+public extension CIImage {
     var continuationImage: Image? {
         let ciContext = CIContext()
         guard let cgImage = ciContext.createCGImage(self, from: self.extent) else { return nil }
