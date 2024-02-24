@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Transforms a Type into another Type
+///Macro for (T) -> (U)
 typealias Transformer<T, TR> = ((T) -> (TR))
-///Does something with a Type
+///Macro for (T) -> ()
 typealias VoidT<T> = Transformer<T, ()>

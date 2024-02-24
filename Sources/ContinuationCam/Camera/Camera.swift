@@ -5,11 +5,6 @@
 //  Created by Julius Brummack on 24.02.24.
 //
 
-//
-//  Camera.swift
-//  SwiftCamBench
-//
-//  Created by Julius Brummack on 25.12.23.
 
 #if canImport(UIKit)
 
@@ -21,6 +16,7 @@ import UIKit
 import os.log
 import Vision
 
+///Camera adapted from Apple reference implementation and with replacement of deprecated function calls
 final class Camera: NSObject {
     private let captureSession = AVCaptureSession()
     private var isCaptureSessionConfigured = false
@@ -339,7 +335,7 @@ extension Camera: AVCaptureVideoDataOutputSampleBufferDelegate {
             connection.videoRotationAngle = self.videoRotation
             
         }
-
+        //TODO: Allow for different Image types
         addToPreviewStream?(CIImage(cvPixelBuffer: pixelBuffer))
     }
 }
