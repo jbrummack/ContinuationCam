@@ -60,11 +60,14 @@ public final class ContinuationCam: ObservableObject {
         let imageStream = camera.previewStream
 
         for await image in imageStream {
-            Task { @MainActor in
+            /*Task { @MainActor in
                 viewfinderImage = image.continuationImage
-            }
+            }*/
             if continuation != nil {
-                continuation!(image)
+                Task {
+                    continuation!(image)
+                }
+                
             }
         }
     }
