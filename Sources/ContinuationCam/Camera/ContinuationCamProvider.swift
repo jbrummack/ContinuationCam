@@ -17,7 +17,7 @@ public final class ContinuationCam: ObservableObject {
     @Published public var viewfinderImage: Image?
     let camera = Camera()
     ///CIImage for processing preview
-    private var continuation: VoidT<CIImage>?
+    public var continuation: ((CIImage) -> ())?
     
     func execute(_ task: @escaping VoidT<CIImage>) {
         self.continuation = task
