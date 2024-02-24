@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 ///Example for Preview
-public struct VisionViewTemplate: View {
+/*public struct VisionViewTemplate: View {
     @StateObject public var provider = ContinuationCam(){img in
         print("Received IMG: \(img)")
     }
@@ -27,3 +27,4 @@ public struct VisionViewTemplate: View {
         }
     }
 }
+*/
