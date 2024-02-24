@@ -10,7 +10,10 @@ import SwiftUI
 
 public struct RealtimeView: View {
     @Binding public var image: Image?
-    
+    public init(image: Image? = nil) {
+        //self.image = image
+        self._image = Binding.constant(image)
+    }
     public var body: some View {
         GeometryReader { geometry in
             if let image = image {
