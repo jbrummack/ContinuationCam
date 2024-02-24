@@ -3,7 +3,7 @@ ContinuationCam aims to be a simple Swift package that alleviates the boilerplat
 It provides a camera module that uses an ```@escaping (CIImage) -> ()``` closure to feed the preview image stream into your computer vision tasks.
 
 # Basic example:
-```
+```swift
 import SwiftUI
 import ContinuationCam
 
