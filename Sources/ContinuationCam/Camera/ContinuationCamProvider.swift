@@ -14,7 +14,7 @@ import os.log
 ///Start the CameraVisionProvider via SwiftUI: *Your View*.task {*Your VisionProvider*.camera.start()}
 public final class ContinuationCam: ObservableObject {
     ///UIImage for simple access
-    @Published var viewfinderImage: Image?
+    @Published public var viewfinderImage: Image?
     let camera = Camera()
     ///CIImage for processing preview
     private var continuation: VoidT<CIImage>?
@@ -23,16 +23,16 @@ public final class ContinuationCam: ObservableObject {
         self.continuation = task
     }
     ///If set the preview stops refreshing
-    func pausePreview() {
+    public func pausePreview() {
         camera.isPreviewPaused = true
     }
     ///If set the preview continues
-    func continuePreview() {
+    public func continuePreview() {
         camera.isPreviewPaused = false
     }
     
 
-    init(_ continuation: VoidT<CIImage>?) {
+    public init(_ continuation: ((CIImage) -> ())?) {
         self.continuation = continuation
         Task {
             await camera.start()
@@ -44,7 +44,7 @@ public final class ContinuationCam: ObservableObject {
             }
         }
     }
-    init() {
+    public init() {
         Task {
             await camera.start()
             Task {
