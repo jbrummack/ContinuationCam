@@ -10,10 +10,10 @@ import SwiftUI
 
 ///Example for Preview
 public struct VisionViewTemplate: View {
-    @StateObject private var provider = ContinuationCam(){img in
+    @StateObject public var provider = ContinuationCam(){img in
         print("Received IMG: \(img)")
     }
-    @State private var rectImage: Image?
+    @State public var rectImage: Image?
     
     public var body: some View {
         GeometryReader { geometry in
