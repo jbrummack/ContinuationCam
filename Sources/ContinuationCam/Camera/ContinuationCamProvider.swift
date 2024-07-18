@@ -60,18 +60,15 @@ public final class ContinuationCam: ObservableObject {
     
     func preview() async {
         let imageStream = camera.previewStream.map {img in
-            //if let img {
-                //Task {
-                    //self.continuation!(img)
-                    //self.processor.process(img.pixelBuffer)
-                //}
-            //}
-            return img
+            Task {self.continuation!(img)}
+            
+            return img.continuationImage
         }
+        
 
         for await image in imageStream {
             Task { @MainActor in
-                viewfinderImage = image.continuationImage
+                viewfinderImage = image
             }
         }
     }
