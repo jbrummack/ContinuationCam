@@ -103,6 +103,12 @@ public extension CIImage {
         guard let cgImage = ciContext.createCGImage(self, from: self.extent) else { return nil }
         return Image(decorative: cgImage, scale: 1, orientation: .up)
     }
+    
+    var cgImage: CGImage? {
+        let ciContext = CIContext()
+        guard let cgImage = ciContext.createCGImage(self, from: self.extent) else { return nil }
+        return cgImage
+    }
 }
 
 fileprivate extension Image.Orientation {
