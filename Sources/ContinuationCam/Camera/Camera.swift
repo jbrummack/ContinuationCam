@@ -333,7 +333,7 @@ extension Camera: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         //let videoRotation = 90.0 //TODO: Landscape support
         if connection.isVideoRotationAngleSupported(videoRotation) {
-            connection.videoRotationAngle = self.videoRotation
+            //connection.videoRotationAngle = self.videoRotation
             
         }
         //TODO: Allow for different Image types
