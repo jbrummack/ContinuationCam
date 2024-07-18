@@ -60,9 +60,9 @@ public final class ContinuationCam: ObservableObject {
         let imageStream = camera.previewStream
 
         for await image in imageStream {
-            /*Task { @MainActor in
+            Task { @MainActor in
                 viewfinderImage = image.continuationImage
-            }*/
+            }
             if continuation != nil {
                 Task {
                     continuation!(image)
@@ -73,16 +73,16 @@ public final class ContinuationCam: ObservableObject {
     }
     
     func handleCameraPhotos() async {
-        let unpackedPhotoStream = camera.photoStream
-            .compactMap { self.unpackPhoto($0) }
+       // let unpackedPhotoStream = camera.photoStream
+       //     .compactMap { self.unpackPhoto($0) }
         
-        for await photoData in unpackedPhotoStream {
+        /*for await photoData in unpackedPhotoStream {
             Task { @MainActor in
                 //Evaluate image stuff
                 print("Taking Photos")
                 //splitHiRes(for: photoData)
             }
-        }
+        }*/
     }
     
     private func unpackPhoto(_ photo: AVCapturePhoto) -> Data? {
