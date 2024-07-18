@@ -11,12 +11,14 @@ import SwiftUI
 import Vision
 import os.log
 
+
 ///Start the CameraVisionProvider via SwiftUI: *Your View*.task {*Your VisionProvider*.camera.start()}
 public final class ContinuationCam: ObservableObject {
     ///UIImage for simple access
     @Published public var viewfinderImage: Image?
     let camera = Camera()
     ///CIImage for processing preview
+    //public var processor: some VisionProcessor = EmptyVisionProcessor()
     public var continuation: ((CIImage) -> ())?
     
     func execute(_ task: @escaping VoidT<CIImage>) {
@@ -58,11 +60,12 @@ public final class ContinuationCam: ObservableObject {
     
     func preview() async {
         let imageStream = camera.previewStream.map {img in
-            if self.continuation != nil {
-                Task {
-                    self.continuation!(img)
-                }
-            }
+            //if let img {
+                //Task {
+                    //self.continuation!(img)
+                    //self.processor.process(img.pixelBuffer)
+                //}
+            //}
             return img
         }
 
